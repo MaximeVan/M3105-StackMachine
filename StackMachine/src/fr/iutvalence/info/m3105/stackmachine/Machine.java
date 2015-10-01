@@ -1,5 +1,7 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
+import java.util.Stack;
+
 public class Machine
 {
 	private CPU cpu;

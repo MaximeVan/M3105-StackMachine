@@ -18,4 +18,9 @@ public class Memory
 		return 0;
 	}
 
+	public void write(int currentAddress, int instructionParam) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

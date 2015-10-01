@@ -10,4 +10,9 @@ public class Program
 		return 0;
 	}
 
+	public Instruction getInstructionAt(int instructionNumber) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

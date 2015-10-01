@@ -1,6 +1,7 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
 import java.io.IOException;
+import java.util.Stack;
 
 public class CPU
 {
@@ -192,6 +193,21 @@ public class CPU
 
 	public void clearStacks()
 	{
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wireToExpStack(Stack expStack) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wireToCallStack(Stack callStack) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public void wireToIoSubsystem(IO ioSystem2) {
 		// TODO Auto-generated method stub
 		
 	}
