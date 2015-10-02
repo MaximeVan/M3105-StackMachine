@@ -4,6 +4,11 @@ public class Program
 {
 	private int instructionCount;
 
+	public Program(Instruction[] instructions)
+	{
+		// TODO Auto-generated constructor stub
+	}
+
 	public int getInstructionCount()
 	{
 		// TODO Auto-generated method stub

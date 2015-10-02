@@ -1,7 +1,5 @@
 package fr.iutvalence.info.m3105.stackmachine;
 
-import java.util.Stack;
-
 public class MachineLauncher
 {
 
@@ -28,26 +26,25 @@ public class MachineLauncher
 								// push result on exp-stack
 		0x16		ret
 		*/
-		Instruction[] instructions = 
-				new Instruction[] 
+		Instruction[] instructions = new Instruction[] 
 				{
-						new Instruction(CPU.IN, null),
-						new Instruction(CPU.CALL, new int[] {0x5}),
-						new Instruction(CPU.OUT, null),
-						new Instruction(CPU.HALT, null),
-						new Instruction(CPU.DUP, null),
-						new Instruction(CPU.JZ, new int[] {0xb}),
-						new Instruction(CPU.CALL, new int[] {0xf}),
-						new Instruction(CPU.RET, null),
-						new Instruction(CPU.POP, null),
-						new Instruction(CPU.PUSH, new int[] {0x1}),
-						new Instruction(CPU.RET, null),
-						new Instruction(CPU.DUP, null),
-						new Instruction(CPU.PUSH, new int[] {0x1}),
-						new Instruction(CPU.SUB, null),
-						new Instruction(CPU.CALL, new int[] {0x5}),
-						new Instruction(CPU.MUL, null),
-						new Instruction(CPU.RET, null)
+						new Instruction(CPUConsole.IN, null),
+						new Instruction(CPUConsole.CALL, new int[] {0x5}),
+						new Instruction(CPUConsole.OUT, null),
+						new Instruction(CPUConsole.HALT, null),
+						new Instruction(CPUConsole.DUP, null),
+						new Instruction(CPUConsole.JZ, new int[] {0xb}),
+						new Instruction(CPUConsole.CALL, new int[] {0xf}),
+						new Instruction(CPUConsole.RET, null),
+						new Instruction(CPUConsole.POP, null),
+						new Instruction(CPUConsole.PUSH, new int[] {0x1}),
+						new Instruction(CPUConsole.RET, null),
+						new Instruction(CPUConsole.DUP, null),
+						new Instruction(CPUConsole.PUSH, new int[] {0x1}),
+						new Instruction(CPUConsole.SUB, null),
+						new Instruction(CPUConsole.CALL, new int[] {0x5}),
+						new Instruction(CPUConsole.MUL, null),
+						new Instruction(CPUConsole.RET, null)
 				};
 		Program program = new Program(instructions);
 		
@@ -66,8 +63,8 @@ public class MachineLauncher
 			// Safely ignore this error, which is not one
 		}
 		
-		IO ioSystem = new IO(System.in, System.out, System.err);
-		CPU cpu = new CPU();		
+		IO ioSystem = new IOConsole(System.in, System.out, System.err);
+		CPU cpu = new CPUConsole();		
 		Machine machine = new Machine(cpu, programMemory, expStack, callStack, ioSystem );
 		try
 		{
