@@ -28,23 +28,23 @@ public class MachineLauncher
 		*/
 		Instruction[] instructions = new Instruction[] 
 				{
-						new Instruction(CPUConsole.IN, null),
-						new Instruction(CPUConsole.CALL, new int[] {0x5}),
-						new Instruction(CPUConsole.OUT, null),
-						new Instruction(CPUConsole.HALT, null),
-						new Instruction(CPUConsole.DUP, null),
-						new Instruction(CPUConsole.JZ, new int[] {0xb}),
-						new Instruction(CPUConsole.CALL, new int[] {0xf}),
-						new Instruction(CPUConsole.RET, null),
-						new Instruction(CPUConsole.POP, null),
-						new Instruction(CPUConsole.PUSH, new int[] {0x1}),
-						new Instruction(CPUConsole.RET, null),
-						new Instruction(CPUConsole.DUP, null),
-						new Instruction(CPUConsole.PUSH, new int[] {0x1}),
-						new Instruction(CPUConsole.SUB, null),
-						new Instruction(CPUConsole.CALL, new int[] {0x5}),
-						new Instruction(CPUConsole.MUL, null),
-						new Instruction(CPUConsole.RET, null)
+						new Instruction(AbstractCPU.IN, null),
+						new Instruction(AbstractCPU.CALL, new int[] {0x5}),
+						new Instruction(AbstractCPU.OUT, null),
+						new Instruction(AbstractCPU.HALT, null),
+						new Instruction(AbstractCPU.DUP, null),
+						new Instruction(AbstractCPU.JZ, new int[] {0xb}),
+						new Instruction(AbstractCPU.CALL, new int[] {0xf}),
+						new Instruction(AbstractCPU.RET, null),
+						new Instruction(AbstractCPU.POP, null),
+						new Instruction(AbstractCPU.PUSH, new int[] {0x1}),
+						new Instruction(AbstractCPU.RET, null),
+						new Instruction(AbstractCPU.DUP, null),
+						new Instruction(AbstractCPU.PUSH, new int[] {0x1}),
+						new Instruction(AbstractCPU.SUB, null),
+						new Instruction(AbstractCPU.CALL, new int[] {0x5}),
+						new Instruction(AbstractCPU.MUL, null),
+						new Instruction(AbstractCPU.RET, null)
 				};
 		Program program = new Program(instructions);
 		
@@ -54,9 +54,9 @@ public class MachineLauncher
 
 		try
 		{
-			programMemory = new Memory(0x00000000, 0x00000020);
-			expStack = new Stack(16);
-			callStack = new Stack(16);
+			programMemory = new AbstractMemory(0x00000000, 0x00000020);
+			expStack = new AbstractStack(16);
+			callStack = new AbstractStack(16);
 		}
 		catch (InvalidParametersException e)
 		{
@@ -64,7 +64,7 @@ public class MachineLauncher
 		}
 		
 		IO ioSystem = new IOConsole(System.in, System.out, System.err);
-		CPU cpu = new CPUConsole();		
+		CPU cpu = new AbstractCPU();		
 		Machine machine = new Machine(cpu, programMemory, expStack, callStack, ioSystem );
 		try
 		{

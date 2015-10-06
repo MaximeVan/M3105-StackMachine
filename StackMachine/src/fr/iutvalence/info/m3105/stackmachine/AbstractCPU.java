@@ -3,7 +3,7 @@ package fr.iutvalence.info.m3105.stackmachine;
 import java.io.IOException;
 import java.util.function.IntBinaryOperator;
 
-public class CPUConsole implements CPU
+public class AbstractCPU implements CPU
 {
 
 	public final static int HALT 	= 0x00;
