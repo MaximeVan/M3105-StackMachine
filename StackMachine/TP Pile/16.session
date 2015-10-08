@@ -1,0 +1,13 @@
+window_sizes 1152 598 200 536 335 35
+diagrams
+  active  classdiagram_ref 128130 // Stack_Machine
+    1012 754 100 4 0 0
+end
+show_stereotypes
+open
+  class_ref 128130 // CPU
+  class_ref 128642 // Memory
+  class_ref 128770 // Instruction
+  class_ref 128898 // Program
+end
+end
